@@ -1,0 +1,22 @@
+<h1>Helen Mystic Search</h1>
+
+<form action="/search" method="get">
+  <input type="text" name="q"></input>
+  <input type="submit">
+</form>
+
+
+{{#if results}}
+  <p>Searched for "{{query}}"</p>
+{{/if}}
+
+{{#each results}}
+  <p>
+    <a href="{{url}}" target="_blank">{{title}}</a> {{url}}
+    <p>
+      {{description}}
+    </p>
+  </p>
+{{else}}
+  <p>No results were found for "<strong>{{query}}</strong>."</p>
+{{/each}}
